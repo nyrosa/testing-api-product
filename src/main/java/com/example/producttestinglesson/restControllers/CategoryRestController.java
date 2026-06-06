@@ -42,4 +42,12 @@ public class CategoryRestController {
     public boolean deleteCategory(@PathVariable int id) {
         return categoryService.deleteCategory(id);
     }
+
+    @PostMapping("/{name}")
+    public List<CategoryResponse> searchByName(@RequestParam String name){
+        return categoryService.searchByName(name);
+    }
+
+
+
 }

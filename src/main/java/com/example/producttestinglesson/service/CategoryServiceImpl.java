@@ -79,4 +79,12 @@ public class CategoryServiceImpl implements CategoryService {
         }
         return deleted;
     }
+
+    @Override
+    public List<CategoryResponse> searchByName(String name) {
+        return categoryRepository.searchByName(name)
+                .stream()
+                .map(this::mapToResponse)
+                .toList();
+    }
 }

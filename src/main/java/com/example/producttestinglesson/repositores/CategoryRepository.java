@@ -47,4 +47,12 @@ public class CategoryRepository {
         }
         return null;
     }
+
+    public List<Category> searchByName (String name) {
+        return categoryList.stream()
+                .filter(category -> category.getName()
+                        .toLowerCase()
+                        .contains(name.toLowerCase()))
+                .toList();
+    }
 }
